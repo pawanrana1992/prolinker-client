@@ -2,23 +2,42 @@ import React, {Component} from 'react';
 import ThemeStyle from '../../../utils/ThemeStyle';
 import {NavLink} from "react-router-dom";
 import DayPickerInput from 'react-day-picker/DayPickerInput';
+
+
+
+
 class RegisterComponent extends Component {
     constructor(props, context) {
         super(props, context);
-
-        // Initial state with date
+        this.dateOfBirth = this.dateOfBirth.bind(this);
+        this.handleInputs = this.handleInputs.bind(this);
         this.state = {
-            selectedDate: '2017-08-13'
-        };
+            first_name: null,
+            last_name: null,
+            email:null,
+            password: null,
+            family_name: null,
+            dateOfBirth: null,
+            gender: null,
 
-        // This binding is necessary to make `this` work in the callback
-        this.HandleLog = this.HandleLog.bind(this);
+        };
     }
-    HandleLog(date) {
+
+    dateOfBirth(day, { selected }) {
         this.setState({
-            selectedDate: date
+            dateOfBirth: selected ? undefined : day,
+        }, ()=>{
+            console.log(this.state);
         });
     }
+    handleInputs(e){
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({[name]: value}, ()=>{
+            console.log(this.state);
+        });
+    }
+
     componentDidMount(){
         //add form theme style
         ThemeStyle();
@@ -33,18 +52,21 @@ class RegisterComponent extends Component {
                         <div className="logo">
                         </div>
                         <h2 className={`title`}>Register Now</h2>
+                        <p>{this.state.selectedDay
+                            ? this.state.selectedDay.toLocaleDateString()
+                            : 'Please select a day 👻'}</p>
                     </div>
                     <div className="wrap-elements">
                         <div className="inputs input-half">
                             <div className="input loaded animate">
                                 <label htmlFor="">First Name</label>
-                                <input type="text"  defaultValue={``}/>
+                                <input onChange={this.handleInputs} type="text" name={`first_name`} defaultValue={``}/>
                             </div>
                         </div>
                         <div className="inputs input-half">
                             <div className="input loaded animate">
                                 <label htmlFor="">Last Name</label>
-                                <input type="text"  defaultValue={``}/>
+                                <input type="text" onChange={this.handleInputs} name={`last_name`} defaultValue={``}/>
                             </div>
                         </div>
 
@@ -53,7 +75,7 @@ class RegisterComponent extends Component {
                         <div className="inputs">
                             <div className="input loaded animate">
                                 <label htmlFor="">Email Address</label>
-                                <input type="email"  defaultValue={``}/>
+                                <input type="email" onChange={this.handleInputs} name={`email`}  defaultValue={``}/>
                             </div>
                         </div>
 
@@ -62,7 +84,7 @@ class RegisterComponent extends Component {
                         <div className="inputs">
                             <div className="input loaded animate">
                                 <label htmlFor="">Password</label>
-                                <input type="password"  defaultValue={``}/>
+                                <input type="password" onChange={this.handleInputs} name={`password`}  defaultValue={``}/>
                             </div>
                         </div>
 
@@ -71,7 +93,7 @@ class RegisterComponent extends Component {
                         <div className="inputs">
                             <div className="input loaded animate">
                                 <label htmlFor="">Family Name</label>
-                                <input type="text" defaultValue={``}/>
+                                <input type="text" onChange={this.handleInputs} name={`family_name`} defaultValue={``}/>
                             </div>
                         </div>
 
@@ -80,18 +102,15 @@ class RegisterComponent extends Component {
                         <div className="inputs input-half">
                             <div className="input loaded animate">
                                 <label htmlFor="">Date of Birth</label>
-
                                 <DayPickerInput
-                                    month={new Date(1940, 1)}
-                                    fromMonth={new Date(1940, 1)}
-                                    toMonth={new Date(2010,12)}
-                                    fixedWeeks
-                                placeholder={``}/>
+                                    selectedDays={this.state.dateOfBirth}
+                                    onDayChange={this.dateOfBirth}
+                                placeholder={``} name={`DOB`}/>
                             </div>
                         </div>
                         <div className="inputs input-half">
                             <div className="select-wrapper">
-                                <select name="" className="pro-link-select">
+                                <select name="gender" className="pro-link-select" onChange={this.handleInputs}>
                                     <option value="Gender" selected={true} disabled={true}>Gender</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
@@ -100,47 +119,12 @@ class RegisterComponent extends Component {
                             </div>
                         </div>
                     </div>
-                    {/*<div className="wrap-elements">*/}
-                        {/*<div className="inputs c-width">*/}
-                            {/*<div className="select-wrapper">*/}
-                                {/*<select name="" className="pro-link-select">*/}
-                                    {/*<option value="+91">+91</option>*/}
-                                    {/*<option value="011">011</option>*/}
-                                    {/*<option value="065">065</option>*/}
-                                {/*</select>*/}
-                            {/*</div>*/}
-                        {/*</div>*/}
-                        {/*<div className="inputs c-width">*/}
-                            {/*<div className="input loaded animate">*/}
-                                {/*<label htmlFor="">Mobile Number</label>*/}
-                                {/*<input type="number"  defaultValue={``}/>*/}
-                            {/*</div>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
 
-                    {/*<div className="wrap-elements">*/}
-                        {/*<div className="inputs input-half">*/}
-                            {/*<div className="select-wrapper">*/}
-                                {/*<select name="" className="pro-link-select">*/}
-                                    {/*<option value="Country" selected={true} disabled={true}>Country</option>*/}
-                                    {/*<option value="India">India</option>*/}
-                                    {/*<option value="Australia">Australia</option>*/}
-                                    {/*<option value="UAE">UAE</option>*/}
-                                {/*</select>*/}
-                            {/*</div>*/}
-                        {/*</div>*/}
-                        {/*<div className="inputs input-half">*/}
-                            {/*<div className="input loaded animate">*/}
-                                {/*<label htmlFor="">City</label>*/}
-                                {/*<input type="text"  defaultValue={``}/>*/}
-                            {/*</div>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
                     <div className="form-footer">
                         <div className="ec-term">
                             <div className="pro-link-radio">
-                                <input type="radio" id="test5" name="radio-group"/>
-                                    <label htmlFor="test5">I am agree with prolinker terms &amp; conditions. </label>
+                                <input type="radio" id="ch-term" name="terms" onChange={this.handleInputs}/>
+                                    <label htmlFor="ch-term">I am agree with prolinker terms &amp; conditions. </label>
                             </div>
                         </div>
                         <button className={`btn btn-blue`}>Submit</button>
