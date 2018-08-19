@@ -1,0 +1,186 @@
+@import "../../../resources/scss/app-mixins";
+.app-nav{
+  @include clearfix;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding:0;
+  font-size: px_to_em($base-font-size / 1.1);
+  letter-spacing: .4px;
+  z-index: $app-nav-zindex;
+  background-color: $lt-black;
+  .header__center {
+    position: relative;
+    height: 68px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    max-width: 100%;
+    .nav-left, .nav-right{
+      position: relative;
+      flex: 0 0 50%;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      display: -ms-flex;
+    }
+    .nav-left{
+      @media (max-width: 768px){
+        flex: 0 0 80%;
+        .left-border{
+          &:after{
+            display: none;
+          }
+        }
+      }
+      nav{
+        width: calc(100% - 44px);
+        .nav-search{
+          font-size: px_to_em($base-font-size * 1.5);
+          color: $white;
+          &:hover,&:focus,&.active{
+            color:$cool-grey;
+          }
+        }
+      }
+    }
+    .nav-right{
+      justify-content: flex-end;
+      .usr-menu{
+        a{
+          i,span{
+            vertical-align: middle;
+          }
+        }
+      }
+      @media (max-width: 768px){
+        flex: 0 0 20%;
+      }
+      .res-button{
+        display: none;
+        font-size: px_to_em($base-font-size *2.5);
+        color: $white;
+        a{
+          display: block;
+          color: $white;
+          &:hover,&:focus,&.active{
+            color:$cool-grey;
+          }
+        }
+      }
+      nav{
+        justify-content:flex-end;
+      }
+      @media (max-width: 768px){
+        .res-button{
+          display: block;
+        }
+        nav{
+          display: none;
+        }
+      }
+
+
+    }
+    nav{
+      position: relative;
+      display: flex;
+      display: -ms-flex;
+      width: 100%;
+      ul{
+        height: 68px;
+        display: flex;
+        display: -ms-flex;
+        padding: 0;
+        position: relative;
+        margin: 0;
+        -ms-flex-align: center;
+        align-items: center;
+        li{
+          position: relative;
+          list-style: none;
+          display: inline-block;
+          color: $cool-grey;
+          font-weight: 500;
+          a{
+            padding: 20px;
+            font-weight: 500;
+            display: block;
+            color: $cool-grey;
+            @include transition(all 150ms ease-in-out);
+            &:hover, &:focus, &.active{
+              color: $white;
+            }
+
+          }
+        }
+      }
+    }
+    .left-border{
+      &:after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: auto;
+        left: 0;
+        width: 1px;
+        height: 38px;
+        margin-top: -19px;
+        background: $capecod;
+      }
+    }
+    .resp-data{
+      display: none;
+
+      @include clearfix;
+      box-sizing: border-box;
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      bottom:0;
+      padding:0;
+      font-size: px_to_em($base-font-size);
+      letter-spacing: .4px;
+      z-index: $app-nav-zindex + 2;
+      background-color: $lt-black;
+      max-height: calc(100vh - 64px);
+      border-top: 1px solid $capecod;
+      .pro-link-tabs{
+        padding-top: 20px;
+        ul{
+          position: relative;
+          display: flex;
+          -ms-flex-align: center;
+          align-items: center;
+          display: -ms-flex;
+          li{
+            list-style: none;
+            flex: 1;
+            text-align: center;
+            a{
+              font-size: px_to_em($base-font-size);
+              display: inline-block;
+              padding: 5px;
+            }
+
+          }
+        }
+      }
+      .tab-data{
+        padding: $gutter_w / 2;
+        @include clearfix;
+        position: relative;
+        overflow-y: auto;
+        min-height:200px;
+        max-height: calc(100vh - 152px);
+        .tab-body{
+          margin-bottom: $gutter_w;
+        }
+      }
+    }
+  }
+}

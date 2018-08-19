@@ -1,0 +1,92 @@
+.sugst-card{
+  position: relative;
+  background: $white;
+  color: $tuatara;
+  font-size: px_to_em($base-font-size);
+  font-weight: 400;
+  line-height: 25px;
+  @include clearfix;
+  max-width: $card_w;
+  @include border-radius($border-radius);
+  margin-bottom: $gutter_w/8;
+  padding:$spacer;
+  .sugst-card-body{
+    @include clearfix;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    >div{
+      &:first-child{
+        width: 38px;
+      }
+      &:nth-child(2){
+        padding-left: $spacer;
+        width: calc(100% - 84px);
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+      }
+      &:last-child{
+        width: 42px;
+        text-align: right;
+      }
+    }
+
+    .card-user{
+      @include border-radius($border-radius);
+    }
+
+  }
+  span{
+    &.tl{
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: block;
+      font-weight: $semibold;
+      line-height: px_to_em($base-lin-height);
+      margin-bottom: $spacer/2;
+
+    }
+    display: block;
+  }
+  small{
+    line-height: px_to_em($base-lin-height);
+    font-size: px_to_em($base-font-size / 1.2);
+    color: $mountainmist;
+  }
+  .sugst-card-ftr{
+    position: relative;
+    @include clearfix;
+    width: 100%;
+    .wrap-ftr{
+      padding-top: $spacer;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      >div{
+        flex: 0 0 50%;
+      }
+
+      >div:first-child{
+        text-align: left;
+        overflow: hidden;
+        font-size: px_to_em($base-font-size);
+        span{
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          display: block;
+        }
+      }
+      >div:last-child{
+      text-align: right;
+    }
+    }
+  }
+}
+
+.job-sugst-card{
+  @extend .sugst-card;
+}

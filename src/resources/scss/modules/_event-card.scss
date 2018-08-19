@@ -1,0 +1,73 @@
+//birthday card
+.event-card{
+  position: relative;
+  background:$pink;
+  color: $white;
+  font-size: px_to_em($base-font-size*1.2);
+  font-weight: $regular;
+  line-height: px_to_em($base-lin-height);
+  @include clearfix;
+  max-width: $card_w;
+  @include border-radius($border-radius);
+  margin-bottom: $gutter_w/4;
+  background-image: url("../img/ui/birth-card-bg.svg");
+  background-position: center bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  .birth-card-header{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding:$gutter_w/2;
+    margin-bottom: $gutter_w/2;
+    >div{
+      flex:1;
+      span{
+        font-size: px_to_em($base-font-size*1.2);
+      }
+    }
+    .left{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+    .right{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      a{
+        color: $white;
+        span{
+          color: $white;
+        }
+        &:hover,&:focus{
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+  .birth-card-body{
+    position: relative;
+    padding: $gutter_w/2;
+    .birth-card-data{
+      position: relative;
+      padding-top: $gutter_w/3;
+      .brth-day{
+        font-size: px_to_em(14px);
+      }
+      .wish-nm{
+        font-weight: 600;
+        font-size: px_to_em(16px);
+      }
+      .article{
+        display: block;
+        margin-bottom: 0;
+        -webkit-margin-after: 0;
+        line-height: px_to_em($base-lin-height);
+        font-size:px_to_em($base-font-size /1.2);
+      }
+    }
+  }
+
+}

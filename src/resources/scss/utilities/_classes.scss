@@ -1,0 +1,102 @@
+
+
+.logo {
+  width: 44px;
+  height: 38px;
+  background: url('/images/ui/logo.svg') no-repeat 0 0 / 44px 38px;
+}
+
+@mixin user ($size){
+  display: inline-block;
+  position: relative;
+  @include border-radius(50%);
+  overflow: hidden;
+  background-image: url('/images/ui/user-placeholder.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  background-color: rgba($white, 0.3);
+
+  @if $size == $user-extra-small {
+    width: $size;
+    height: $size;
+  }
+  @else if $size == $user-small {
+    width: $size;
+    height: $size;
+  }
+  @else if $size == $user-medium {
+    width: $size;
+    height: $size;
+  }
+  @else if $size == $user-lg {
+    width: $size;
+    height: $size;
+  }
+  @else if $size == $user-extra-lg {
+    width: $size;
+    height: $size;
+  }
+  @else if $size == $user-largest {
+    width: $size;
+    height: $size;
+  }
+
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
+
+.user-small{
+  @include user($user-small);
+}
+.user-extra-small{
+  @include user($user-extra-small);
+}
+.user-medium{
+  @include user($user-medium);
+}
+.user-lg{
+  @include user($user-lg);
+}
+.user-extra-lg{
+  @include user($user-extra-lg);
+}
+.user-larger{
+  @include user($user-largest);
+}
+
+
+//blocks
+
+.d-block{
+  display: block !important;
+}
+.d-flex{
+  display: flex !important;
+}
+.d-none{
+  display: none !important;
+}
+
+
+.title-block{
+  position: relative;
+  @include clearfix;
+  display: block;
+  font-size: px_to_em($base-font-size*1.1);
+  color: $mountainmist;
+  font-weight: $regular;
+  margin-bottom: $spacer;
+  padding-top: $gutter_w/2;
+}
+
+.w-100{
+ width: 100% !important;
+  @include clearfix;
+}
+
+
+

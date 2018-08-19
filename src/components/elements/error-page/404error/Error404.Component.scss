@@ -1,0 +1,50 @@
+@import "../../../../resources/scss/app-mixins";
+.error404{
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  max-height: 100vh;
+  .center{
+    display: flex;
+    height: 95vh;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    .obj{
+      @include border-radius(0.5rem);
+      width: 100%;
+      @include clearfix;
+      @include box-sizing(border-box);
+      position: relative;
+      background-color: $charcoal;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: $gutter_w;
+      @include box-shadow(0,0,3rem, rgba($midnight,0.5));
+      .illustration{
+        width: 100%;
+        text-align: center;
+        min-height: 42vh;
+        img{
+          max-width: 500px;
+          margin: auto;
+        }
+      }
+      .obj-footer{
+        .title{
+          color: $silver;
+        }
+        @include clearfix;
+        position: relative;
+        padding: $gutter_w;
+        text-align: center;
+        .btn{
+          margin: $gutter_w auto;
+        }
+      }
+    }
+  }
+}

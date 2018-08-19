@@ -1,0 +1,99 @@
+//user card
+.user-card{
+  position: relative;
+  background: $white;
+  color: $tuatara;
+  font-size:px_to_em($base-font-size*1.1);
+  font-weight: $light;
+  line-height: px_to_em($base-lin-height);
+  @include clearfix;
+  max-width: $card_w;
+  @include border-radius($border-radius);
+  margin-bottom: $gutter_w/4;
+  .user-card-header{
+    position: relative;
+    padding: $gutter_w / 2 $gutter_w / 2 0;
+    text-align: center;
+    .image-holder{
+      margin-top: $gutter_w/2;
+    }
+    .user-hd-data{
+      padding: $gutter_w/3;
+      @include clearfix;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      justify-items: center;
+      text-align: center;
+      .tl{
+        font-size: px_to_em($base-font-size*1.2);
+        font-weight: $normal;
+      }
+      small{
+        color: $mountainmist;
+      }
+    }
+  }
+  .user-card-body{
+    position: relative;
+    @include clearfix;
+    padding: $gutter_w/3;
+    ul{
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      li{
+        list-style: none;
+        a{
+          padding: $gutter_w/4;
+          display: block;
+          text-align: center;
+          span{
+            display: block;
+            color: $capecod;
+          }
+          small{
+            display: block;
+            color: $mountainmist;
+          }
+        }
+      }
+    }
+  }
+  .user-card-footer{
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    padding:0  $gutter_w / 2 $gutter_w / 2;
+    justify-content: center;
+    align-items: center;
+    .btn{
+      min-width: 80px;
+      margin-right: $gutter_w/3;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.mrg-card{
+  background-color: $blue;
+  color: $white !important;
+  @extend .user-card;
+  .tl{
+    color: $white !important;
+  }
+  small{
+    color: $white !important;
+  }
+  span{
+    color: $white !important;
+  }
+}

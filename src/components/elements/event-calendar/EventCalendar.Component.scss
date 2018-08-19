@@ -1,0 +1,177 @@
+@import "../../../resources/scss/app-mixins";
+.calendar-wrap{
+  position: relative;
+  @include clearfix;
+  max-width: $card_w;
+  .orange{
+    background-color: $orange !important;
+  }
+  .green{
+    background-color: $green !important;
+  }
+  .blue{
+    background-color: $blue !important;
+  }
+  .yellow{
+    background-color: $yellow !important;
+
+  }
+  .calendar-body{
+    position: relative;
+    background-color: $white;
+    display: block;
+    padding: $spacer;
+    color: $gray;
+    @include clearfix;
+    @include border-radii($border-radius,$border-radius,0,0);
+    .month {
+      width: 100%;
+      text-align: center;
+      @include clearfix;
+      margin-bottom: $spacer;
+      ul {
+        margin: 0;
+        padding: 0;
+         li {
+           list-style: none;
+          font-size: px_to_em($base-font-size);
+           &.prev {
+             float: left;
+           }
+           &.next {
+             float: right;
+           }
+           .m-name{
+             display: block;
+             font-size: px_to_em($base-font-size*1.1);
+             color: $charcoal;
+
+           }
+           .y-name{
+
+           }
+        }
+      }
+
+    }
+    .weekdays {
+      margin: 0;
+      padding: $spacer 0;
+      @include clearfix;
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        list-style: none;
+        width: 14.28%;
+        text-transform: uppercase;
+        font-weight: $semibold;
+        color: $gray;
+        text-align: center;
+      }
+
+    }
+
+    .days {
+      padding: $spacer 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        position: relative;
+        @include transition(all 200ms ease-in-out);
+        list-style-type: none;
+        display: inline-block;
+        width: 14.28%;
+        text-align: center;
+        padding: $spacer $spacer / 2;
+        font-size:px_to_em($base-font-size / 1.2);
+        color: $gray;
+        &:hover{
+          background-color: rgba($gallery, 15);
+          cursor: pointer;
+          @include border-radius(50%)
+        }
+        &.active {
+          display: block;
+          background-color: rgba($gallery, 15);
+          cursor: pointer;
+          @include border-radius(50%)
+        }
+        .events{
+          width: 100%;
+          @include clearfix;
+          position: relative;
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: center;
+          align-items: center;
+          >span{
+            width: 4px;
+            height: 4px;
+            margin-right: 2px;
+            display: inline-block;
+            @include border-radius(50%);
+            &:last-child{
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+
+
+  }
+  .legend{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: $white;
+    padding: $spacer;
+    @include border-radii(0,0, $border-radius,$border-radius);
+    .entry{
+      position: relative;
+      flex: 1;
+      display: inline-block;
+      padding-left: $spacer *1.2;
+      padding-right: $spacer;
+      color: $gray;
+      background-color: transparent !important;
+      &:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top:calc(50% - 3px);
+        width: 6px;
+        height: 6px;
+        @include border-radius(50%);
+        background-color: $white;
+
+      }
+      &.orange{
+        &:after{
+          background-color: $orange !important;
+        }
+      }
+      &.green{
+        &:after{
+          background-color: $green !important;
+        }
+
+      }
+      &.blue{
+        &:after{
+          background-color: $blue !important;
+        }
+      }
+      &.yellow{
+        &:after{
+          background-color: $yellow !important;
+        }
+
+      }
+    }
+  }
+}

@@ -1,0 +1,141 @@
+.news-card{
+  @include clearfix;
+  margin-bottom: $gutter_w/2;
+  >div{
+    &:first-child{
+      @include border-radii($border-radius,$border-radius, 0, 0);
+    }
+    &:last-child{
+      @include border-radii(0,0,$border-radius,$border-radius);
+    }
+  }
+  .graphic-data{
+    background-color: $desertstorm;
+    @include aspect-ratio(16,9);
+  }
+  .news-card-body{
+    background-color: $white;
+    color: $davysgray;
+    @include clearfix;
+    position: relative;
+    padding:$gutter_w/2;
+  }
+  .news-card-footer{
+    @include clearfix;
+    position: relative;
+    background-color: $white;
+    color: $davysgray;
+    padding:$gutter_w/2;
+    .wrp-ftr{
+      @include clearfix;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      >div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex: 1;
+        &:nth-child(2){
+          justify-content: center;
+        }
+        &:last-child{
+          justify-content: flex-end;
+
+        }
+        >a{
+          @include transition(all 200ms ease-in-out);
+          margin-right: $spacer;
+          color:$lt-black;
+          font-size: px_to_em($base-font-size);
+          font-weight: $normal;
+          &:hover,&:focus,&.active{
+            color: $blue;
+          }
+        }
+        >span{
+          font-size: px_to_em($base-font-size);
+          color: $mountainmist;
+        }
+      }
+    }
+  }
+  .article{
+    @include clearfix;
+    position: relative;
+    font-weight: $regular;
+    .tl{
+      font-weight: $semibold;
+      font-size: px_to_em($base-font-size * 1.2);
+      color: $lt-black;
+    }
+  }
+}
+
+
+.news-card-user{
+  @include clearfix;
+  width: 100%;
+  display: inline-block;
+  margin-bottom: $gutter_w/2;
+  .card-user-wrp{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .user-ic{
+      >a.usr-img{
+        @include border-radius($border-radius);
+        vertical-align: middle;
+      }
+      .root-usr{
+        position: absolute;
+        z-index: 2;
+        top:-8px;
+        left: -8px;
+        border: 2px solid $white;
+      }
+
+    }
+    .user-data{
+      display: flex;
+      flex-direction: column;
+      width: calc(100% - 66px);
+      padding-left: $spacer;
+      padding-right: $spacer;
+      .crd-type-tl{
+        @include clearfix;
+        font-size: px_to_em($base-font-size);
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        >span{
+          margin-right: $spacer/2;
+          font-size: px_to_em($base-font-size);
+        }
+        .nm{
+          font-weight: $semibold;
+          color: $lt-black;
+        }
+        .wt-did{
+          color: $mountainmist;
+          font-size: px_to_em($base-font-size);
+        }
+        .cat{
+          color: $blue;
+        }
+      }
+      small{
+        color: $mountainmist;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    .user-act{
+    }
+  }
+}

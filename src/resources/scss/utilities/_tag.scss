@@ -1,0 +1,25 @@
+.tag {
+  background-color: black;
+  border-radius: 8px;
+  color: white;
+  font-weight: $extrabold;
+  font-size: 9px;
+  line-height: 16px;
+  padding: 0 8px;
+  position: absolute;
+  right: -42px;
+  text-transform: uppercase;
+  top: 0;
+
+  &.blue {
+    background-color: $blue;
+  }
+
+  &.green {
+    background-color: $green;
+  }
+
+  &.red {
+    background-color: #ff577a;
+  }
+}

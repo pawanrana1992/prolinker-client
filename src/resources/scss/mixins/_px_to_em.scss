@@ -1,0 +1,12 @@
+@function px_to_em($target, $context: $base-font-size) {
+  @if $target == 0 { @return 0 }
+  @return $target / $context + 0em;
+}
+
+@mixin box-sizing($box-sizing){
+  box-sizing: $box-sizing;
+  -webkit-box-sizing: $box-sizing;
+  -moz-box-sizing: $box-sizing;
+  -o-box-sizing: $box-sizing;
+  -ms-box-sizing: $box-sizing;
+}

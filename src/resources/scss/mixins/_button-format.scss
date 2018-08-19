@@ -1,0 +1,55 @@
+
+@mixin gradient-button(
+  $colorTop,
+  $colorBottom,
+  $colorHover: $colorBottom,
+  $topPercent: 100%,
+  $bottomPercent: 100%,
+  $textColor: $white
+) {
+  color: $textColor;
+  background: linear-gradient(-180deg, $colorTop $topPercent, $colorBottom $bottomPercent);
+
+  &:hover {
+    background: $colorHover;
+  }
+}
+@mixin pro-link-button(
+  $base,
+  $text: $white,
+  $loading: $white,
+  $outline: $base,
+  $outlineHover: $outline,
+  $outlineHoverText: $base
+) {
+  color: $text;
+  background-color: $base;
+
+  // Loading
+  &:before { opacity: 1; transition: opacty 200ms ease 150ms; }
+
+  // Downward Arrow
+  &.btn-arrow-down {
+    &:after { border-top-color: $base; }
+    &:hover:after { border-top-color: darken($base, 5%); }
+    &:active:after { border-top-color: darken($base, 7%); }
+  }
+
+  // Hover State
+  &:before  { background-color: $loading; }
+  &:hover   {
+    color: darken($text, 5%);
+    background-color: darken($base, 5%);
+  }
+  &:active  { background-color: darken($base, 7%); color: darken($text, 20%); }
+  &.btn-outline {
+    color: $base;
+    background: transparent;
+    box-shadow: inset 0 0 0 2px $outline;
+
+    // Outline
+    &:hover   { color: $outlineHoverText; box-shadow: inset 0 0 0 2px darken($outlineHover, 5%); }
+    &:active  { color: darken($outline, 7%); box-shadow: inset 0 0 0 2px darken($outline, 7%); }
+  }
+}
+

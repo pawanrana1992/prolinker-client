@@ -1,0 +1,25 @@
+.spinner {
+  display: block;
+  width: 16px;
+
+  -webkit-animation-name: spin-around;
+  -moz-animation-name: spin-around;
+  -o-animation-name: spin-around;
+  animation-name: spin-around;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+@-webkit-keyframes spin-around { from { transform: rotate(0deg); } to { transform: rotate(360deg); }  }
+@-moz-keyframes spin-around { from { transform: rotate(0deg); } to { transform: rotate(360deg); }  }
+@-o-keyframes spin-around { from { transform: rotate(0deg); } to { transform: rotate(360deg); }  }
+@keyframes spin-around { from { transform: rotate(0deg); } to { transform: rotate(360deg); }  }

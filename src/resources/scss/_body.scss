@@ -1,0 +1,148 @@
+
+body {
+  background: $tuatara;
+  background-size: 1600px 1180px;
+  color: $white;
+  font: $regular 13px/1.54 $font;
+  min-height: calc(100vh - 645px);
+  overflow-y: scroll;
+  padding-bottom: 645px;
+  position: relative;
+  letter-spacing: px_to_em(1.2px);
+
+  // Watch kit page
+  &.watch-kit { background: $black; }
+
+  // HACK: Hide ngf-upload field
+  > input[type="file"] {
+    left: -100px;
+    top: -100px;
+  }
+}
+
+html,
+body {
+  // height: 100%;
+  position: relative;
+}
+
+// Reset, the reset
+h1, h2, h3, h4, h5, h6, ol, ul, li, dl, dt {
+  margin: 0;
+  padding: 0;
+}
+
+// Anchors
+a {
+  color: $blue;
+  text-decoration: none;
+
+  // Hover state
+  &:hover { color: $white; }
+}
+strong { font-weight: $semibold; }
+
+.text-left { text-align: left; }
+.text-center { text-align: center !important; }
+.text-right { text-align: right; }
+
+
+// Page Container
+#page {
+  box-sizing: border-box;
+  height: auto !important;
+  padding: 78px 0 0;
+  position: relative;
+
+  // Hide Footer on Mobile
+  @include media_query(mobile) {
+    margin-bottom: 0;
+    padding-bottom: 48px;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    height: 140px;
+    position: relative;
+    z-index: -1;
+
+    // Hide Footer on Mobile
+    @include media_query(mobile) {
+      display: none;
+    }
+  }
+}
+
+// Containers
+.container {
+  margin: 0 auto;
+  width: $card_w;
+  max-width: 100%;
+}
+
+.main{
+  position: relative;
+  @include clearfix;
+  width: 100%;
+  max-height:calc(100vh - 48px);
+  overflow-y: auto;
+  margin-top: 48px;
+  padding-bottom: $gutter_w;
+  padding-top: $gutter_w / 2;
+  @include box-sizing(border-box);
+  .center{
+    @include media_query(mobile){
+      padding:0 $spacer;
+    }
+  }
+}
+
+.wrap-container{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 100px;
+  @include media_query(mobile){
+    padding-top: 20px;
+  }
+  @include media_query(ipad){
+    padding-top: 20px;
+  }
+
+  .left-col{
+    width:23%;
+    @include media_query(mobile){
+      display: none;
+    }
+    @include media_query(ipad){
+      width: 35%;
+    }
+  }
+  .center-col{
+    width: 54%;
+    padding-left: $gutter_w;
+    padding-right: $gutter_w;
+    @include media_query(mobile){
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    @include media_query(ipad){
+      width: 65%;
+      padding-left: $gutter_w;
+    }
+
+  }
+  .right-col{
+   width: 23%;
+    @include media_query(mobile){
+      display: none;
+    }
+    @include media_query(ipad){
+      display: none;
+    }
+  }
+}
+
+

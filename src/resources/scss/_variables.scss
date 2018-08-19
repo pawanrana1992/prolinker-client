@@ -1,0 +1,129 @@
+/**
+ * UI8 - Variables
+ */
+
+
+// Grayscale (light to dark)
+$white:         #FFFFFF;
+$desertstorm:   #F8F8F8;
+$gallery:       #ededed;
+$cararra:       #ececec;
+$graynurse:     #E8E8E8;
+$bonjour:       #e1e1e1;
+$duhfuh:        #dfdfdf;
+$date:          #d8d8d8;
+$cloud:         #c4c4c4;
+$silver:        #AFAFAF;
+$cool-grey:     #adb7be;
+$mountainmist:  #949494;
+$gray:          #808080;
+$dovegray:      #717171;
+$stormdust:     #636363;
+$brownish-grey: #5c5c5c;
+$davysgray:     #555555;
+$gravel:        #484848;
+$tundora:       #464646;
+$capecod:       #414141;
+$charcoal:      #3F3F3F;
+$masala:        #3E3E3E;
+$tuatara:       #353535;
+$mineshaft:     #333333;
+$lightderk:     #303030;
+$darksky:       #2e2e2e;
+$heavymetal:    #2c2c2c;
+$balticsea:     #2b2b2b;
+$shark:         #2A2A2A;
+$lt-black:      #232323;
+$midnight:      #212121;
+$black:         #000000;
+
+
+// Brand colors
+$aftereffects:  #6362FE;
+$dribbble:      #ea4c89;
+$dropbox:       #007ee5;
+$facebook:      #3b5998;
+$html:          #505C7E;
+$illustrator:   #F89A1C;
+$indesign:      #FE4A95;
+$keynote:       #1D9DF7;
+$omnigraffle:   #7ED321;
+$paypal:        #009cde;
+$photoshop:     #00a4e4;
+$powerpoint:    #F22918;
+$sketch:        #FF6C31;
+$swift:         #EEE;
+$tumblr:        #33455E;
+$twitter:       #00aced;
+$wordpress:     #0087be;
+$xcode:         $white;
+$xd:            #dc3d84;
+$framer:        #00aaff;
+
+// Utility Colors
+$red:           #B64B4B;
+$love:          #FB6666;
+$blue:          #2F8BE6;
+$green:         #33a466;
+$pink:          #ef3d70;
+$yellow:        #F89A1C;
+$orange:        #FF6C31;
+
+// Transparencies
+$text-shadow: rgba(49, 49, 49, .5);
+$black-25: rgba(0, 0, 0, .25);
+
+// Fonts
+
+$light:         300;
+$regular:       400;
+$semibold:      600;
+$bold:          700;
+$extrabold:     800;
+$normal:        $regular;
+$font:         'Segoe UI Web', sans-serif;
+$open-sans:     'Open Sans', sans-serif;
+$base-font-size: 16px;
+$base-lin-height: 25px;
+// Container Widths
+$spacer: 10px;
+$gutter_w:      2em;
+$card_w: 100%;
+/*------------------------------------*\
+    breakpoint vars
+\*------------------------------------*/
+$break-320: 20em;
+$break-321: 20.0625em;
+$break-480: 30em;
+$break-600: 37.5em;
+$break-768: 48em;
+$break-980: 61.25em;
+$break-1024: 64em;
+$break-1200: 75em;
+$break-1224: 76.5em;
+$break-1280: 80em;
+$break-1560: 100em;
+$break-1824: 114em;
+
+/*------------------------------------*\
+    breakpoint mixin
+\*------------------------------------*/
+//border-radius
+$border-radius: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+//z-indexes
+$app-nav-zindex: 9000000 !default;
+
+//function
+$caret-width:                 4px !default;
+$enable-caret: true;
+
+//user image preview sizes
+
+$user-extra-small: 18px;
+$user-small:28px;
+$user-medium: 38px;
+$user-lg: 64px;
+$user-extra-lg: 128px;
+$user-largest:150px;

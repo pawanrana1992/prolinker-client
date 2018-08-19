@@ -1,0 +1,45 @@
+
+// Retina Image Mixin
+// Usage: @include retina-image('global/logo', 'png');
+// Result:
+// //d1v8dk3ka6obgr.cloudfront.net/v5/assets/mailer/global/logo.png
+// //d1v8dk3ka6obgr.cloudfront.net/v5/assets/mailer/global/logo@2x.png
+@mixin retina-image($src, $ext, $width: auto, $height: auto) {
+  $path: '//d1v8dk3ka6obgr.cloudfront.net/v5/assets/';
+
+  background-image: url($path + $src + '.' + $ext);
+
+  // Add image dimensions, not required
+  @if ($width != 'auto' and $height != 'auto') {
+    background-size: ($width * 1px) ($height * 1px);
+  }
+
+  /* CSS for high-resolution devices */
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (-moz-min-device-pixel-ratio: 1.5),
+  only screen and (-o-min-device-pixel-ratio: 3/2),
+  only screen and (min-device-pixel-ratio: 1.5) {
+    background-image: url($path + $src + '@2x.' + $ext);
+  }
+}
+
+// Retina Image Mixin / Temp Hack / logos looking massive on retina screens
+
+@mixin retina-image-hack($src, $ext, $width: auto, $height: auto) {
+  $path: '//d1v8dk3ka6obgr.cloudfront.net/v5/assets/';
+
+  background-image: url($path + $src + '.' + $ext);
+
+  // Add image dimensions, not required
+  @if ($width != 'auto' and $height != 'auto') {
+    background-size: ($width * 1px) ($height * 1px);
+  }
+
+  /* CSS for high-resolution devices */
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (-moz-min-device-pixel-ratio: 1.5),
+  only screen and (-o-min-device-pixel-ratio: 3/2),
+  only screen and (min-device-pixel-ratio: 1.5) {
+    background-image: url($path + $src + '.' + $ext);
+  }
+}

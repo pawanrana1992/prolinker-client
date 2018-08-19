@@ -1,0 +1,27 @@
+// Quick Floats
+.pull-left { float: left !important; }
+.pull-right { float: right !important; }
+.clearfix { @include clearfix; }
+
+.no-animate { transition: none !important; }
+
+// SVGs
+svg {
+  path, rect {
+    fill: currentColor;
+    stroke: currentColor;
+  }
+}
+
+
+.center {
+  box-sizing: border-box;
+  max-width: $break-1560;
+  margin: 0 auto;
+  padding: 0 $gutter_w / 2;
+
+  @include media_query(mobile){
+    max-width: 100%;
+  }
+
+}

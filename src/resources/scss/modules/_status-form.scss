@@ -1,0 +1,95 @@
+.status-form{
+  position: relative;
+  width: 100%;
+  @include clearfix;
+  margin-bottom: $gutter_w;
+  background-color: $shark;
+  @include border-radius($border-radius);
+  @include transition(color 200ms ease-in-out);
+  overflow: hidden;
+  .sts-title-wrp{
+    @include transition(color 200ms ease-in-out);
+    position: relative;
+    @include clearfix;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 0 $gutter_w/2;
+    width: 100%;
+    height: 70px;
+    .inputs{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 100%;
+      .usr-pic{
+
+      }
+      .input{
+        margin: 0;
+        width: calc(100% - #{$user-medium});
+      }
+    }
+  }
+  .inputs{
+    width: 100%;
+  }
+  .sts-form-footer{
+    @include transition(color 200ms ease-in-out);
+    @include clearfix;
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding:$gutter_w/2 $gutter_w/2 0;
+    >div{
+      flex: 1;
+      ul{
+        list-style: none;
+        padding: 0;
+        display: inline-block;
+        li{
+          list-style: none;
+          display: inline-block;
+          a{
+            span{
+              @include transition(color 200ms ease-in-out);
+            }
+            &:hover,&:focus,&.active{
+              span{
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+      display: flex;
+      flex-wrap: wrap;
+      &:first-child{
+        justify-content: flex-start;
+        a{
+          padding: $spacer;
+          display: block;
+          span{
+            font-size: px_to_em($base-font-size * 1.2);
+            color:$dovegray;
+          }
+        }
+      }
+      &:last-child{
+        justify-content: flex-end;
+        padding-bottom: $spacer;
+
+        a.link{
+          margin-right: $spacer;
+          color:$dovegray;
+          font-weight: $regular;
+          @include transition(color 200ms ease-in-out);
+          &:hover,&:focus,&.active{
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

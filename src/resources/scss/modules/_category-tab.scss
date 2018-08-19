@@ -1,0 +1,22 @@
+.cat-tab{
+  position: relative;
+  @include clearfix;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0 $gutter_w/2;
+  .pro-link-tabs{
+    width: 100%;
+    >.tab{
+      padding: $spacer/2;
+      &:first-child{
+        float: left;
+      }
+      &:last-child{
+        float: right;
+      }
+    }
+  }
+}
